@@ -13,4 +13,4 @@ app:
     email-confirmation-enabled: false
 
   jwt:
-    secret: "absncjj1232323mmmcdfj"
+    secret: "q2Y0W0rUQ7x0m0YcVb1s5H2N1G7S9nXk4FJx3q7lO0gY6W1mB8kP2aR5tU9zC4dE3fG6hJ1kL7pQ2sT5uV8w=="
