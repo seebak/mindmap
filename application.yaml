@@ -1,7 +1,7 @@
 app:
   site:
-    ui-base-url: https://wm.caseebak.com
-    api-base-url: https://wm.caseebak.com
+    ui-base-url: https://mm.caseebak.com
+    api-base-url: https://mm.caseebak.com
 
   mail:
     enabled: false
