@@ -1,0 +1,17 @@
+services:
+  wisemapping:
+    image: wisemapping/wisemapping:latest
+    restart: unless-stopped
+    volumes:
+      - ./application.yml:/app/config/application.yml:ro
+      - wisemapping_data:/var/lib/wisemapping
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.wm.rule=Host(`wm.caseebak.com`)
+      - traefik.http.routers.wm.entrypoints=https
+      - traefik.http.routers.wm.tls=true
+      - traefik.http.routers.wm.tls.certresolver=letsencrypt
+      - traefik.http.services.wm.loadbalancer.server.port=80
+
+volumes:
+  wisemapping_data:
