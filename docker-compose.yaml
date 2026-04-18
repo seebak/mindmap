@@ -3,7 +3,7 @@ services:
     image: wisemapping/wisemapping:latest
     restart: unless-stopped
     volumes:
-      - ./application.yml:/app/config/application.yml:ro
+      - ./application.yml:/app/config/application.yaml:ro
       - wisemapping_data:/var/lib/wisemapping
     labels:
       - traefik.enable=true
