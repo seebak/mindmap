@@ -2,7 +2,15 @@ app:
   site:
     ui-base-url: https://wm.caseebak.com
     api-base-url: https://wm.caseebak.com
+
   mail:
     enabled: false
     sender-email: no-reply@caseebak.com
     support-email: no-reply@caseebak.com
+
+  registration:
+    enabled: true
+    email-confirmation-enabled: false
+
+  jwt:
+    secret: "absncjj1232323mmmcdfj"
