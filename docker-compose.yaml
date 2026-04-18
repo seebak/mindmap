@@ -2,9 +2,13 @@ services:
   wisemapping:
     image: wisemapping/wisemapping:latest
     restart: unless-stopped
-    volumes:
-      - ./application.yml:/app/config/application.yaml:ro
-      - wisemapping_data:/var/lib/wisemapping
+    environment:
+      APP_SITE_UI_BASE_URL: https://wm.caseebak.com
+      APP_SITE_API_BASE_URL: https://wm.caseebak.com
+      APP_MAIL_ENABLED: "false"
+      APP_REGISTRATION_ENABLED: "true"
+      APP_REGISTRATION_EMAIL_CONFIRMATION_ENABLED: "false"
+      APP_JWT_SECRET: "replace-this-with-a-long-random-secret-very-long"
     labels:
       - traefik.enable=true
       - traefik.http.routers.wm.rule=Host(`wm.caseebak.com`)
@@ -12,6 +16,3 @@ services:
       - traefik.http.routers.wm.tls=true
       - traefik.http.routers.wm.tls.certresolver=letsencrypt
       - traefik.http.services.wm.loadbalancer.server.port=80
-
-volumes:
-  wisemapping_data:
