@@ -16,10 +16,11 @@ services:
       - wisemapping_data:/data
     labels:
       - traefik.enable=true
-      - traefik.http.routers.mm.rule=Host(`mm.caseebak.com`)
-      - traefik.http.routers.mm.entrypoints=https
-      - traefik.http.routers.mm.tls=true
-      - traefik.http.routers.mm.tls.certresolver=letsencrypt
-      - traefik.http.services.mm.loadbalancer.server.port=80
+      - traefik.http.routers.wm.rule=Host(`mm.caseebak.com`)
+      - traefik.http.routers.wm.entrypoints=https
+      - traefik.http.routers.wm.tls=true
+      - traefik.http.routers.wm.tls.certresolver=letsencrypt
+      - traefik.http.services.wm.loadbalancer.server.port=80
+
 volumes:
   wisemapping_data:
