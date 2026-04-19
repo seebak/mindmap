@@ -9,6 +9,9 @@ services:
       APP_REGISTRATION_ENABLED: "true"
       APP_REGISTRATION_EMAIL_CONFIRMATION_ENABLED: "false"
       APP_JWT_SECRET: "q2Y0W0rUQ7x0m0YcVb1s5H2N1G7S9nXk4FJx3q7lO0gY6W1mB8kP2aR5tU9zC4dE3fG6hJ1kL7pQ2sT5uV8w=="
+      SPRING_DATASOURCE_URL: jdbc:hsqldb:file:/data/wisemapping/db
+    volumes:
+      - wisemapping_data:/data
     labels:
       - traefik.enable=true
       - traefik.http.routers.wm.rule=Host(`mm.caseebak.com`)
@@ -16,3 +19,5 @@ services:
       - traefik.http.routers.wm.tls=true
       - traefik.http.routers.wm.tls.certresolver=letsencrypt
       - traefik.http.services.wm.loadbalancer.server.port=80
+volumes:
+  wisemapping_data:
