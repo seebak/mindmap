@@ -20,7 +20,7 @@ services:
       - traefik.http.routers.wm.entrypoints=https
       - traefik.http.routers.wm.tls=true
       - traefik.http.routers.wm.tls.certresolver=letsencrypt
-      - traefik.http.services.wm.loadbalancer.server.port=80
+      - traefik.http.services.wm.loadbalancer.server.port=8080
 
 volumes:
   wisemapping_data:
