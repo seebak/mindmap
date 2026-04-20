@@ -10,8 +10,6 @@ services:
       APP_REGISTRATION_EMAIL_CONFIRMATION_ENABLED: "false"
       APP_JWT_SECRET: "lYy6y2K8wZ6GmX2uWQe3s9nH8rB4VjP5fC7dT1qL0kR9uM2aXxY8Zp3bN6hJ4sFvQ1eR2tW5yU7iO0cD8E9g=="
       SPRING_DATASOURCE_URL: jdbc:hsqldb:file:/data/db/wisemapping
-    command: >
-      sh -c "mkdir -p /data/db && exec java -jar /app/wisemapping-api.jar"
     volumes:
       - wisemapping_data:/data
     labels:
